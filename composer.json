@@ -1,0 +1,21 @@
+{
+    "name": "andrframe/framework",
+    "description": "My FW",
+    "license": "learn",
+    "authors": [
+        {
+            "name": "andrkyn",
+            "email": "andrhil14@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Andframe\\Framework\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "5.6.*"
+    }
+}
