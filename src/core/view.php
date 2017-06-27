@@ -1,5 +1,7 @@
 <?php
 
+namespace Andframe\Framework\Core;
+
 class View
 {
 	
