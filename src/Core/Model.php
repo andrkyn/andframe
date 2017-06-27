@@ -1,15 +1,15 @@
 <?php
 
-namespace Andframe\Framework\Core;
+//namespace Andframe\Framework\Core;
 
 class Model
 
 
 {
-    public function __construct()
-    {
-        echo 'я в модели';
-    }
+    //public function __construct()
+    //{
+     //   echo 'я в модели';
+    //}
 
 	/*
 		Модель обычно включает методы выборки данных, это могут быть:
@@ -18,11 +18,11 @@ class Model
 			> методы ORM;
 			> методы для работы с NoSQL;
 			> и др.
-
+*/
 
 	// метод выборки данных
 	public function get_data()
 	{
 		// todo
-	} */
+	}
 }

@@ -1,6 +1,7 @@
 <?php
 
-namespace Andframe\Framework\Core;
+//namespace Andframe\Framework\Core;
+
 /*
 Класс-маршрутизатор для определения запрашиваемой страницы.
 > цепляет классы контроллеров и моделей;
@@ -9,11 +10,7 @@ namespace Andframe\Framework\Core;
 class Route
 {
 
-    public function __construct()
-    {
-    echo 'я в роутере';
-    }
-    /*static function start()
+    static function start()
     {
         // контроллер и действие по умолчанию
         $controller_name = 'Main';
@@ -38,34 +35,34 @@ class Route
         $controller_name = 'Controller_'.$controller_name;
         $action_name = 'action_'.$action_name;
 
-
-        //echo "Model: $model_name <br>";
-        //echo "Controller: $controller_name <br>";
-        //echo "Action: $action_name <br>";
-
+        /*
+        echo "Model: $model_name <br>";
+        echo "Controller: $controller_name <br>";
+        echo "Action: $action_name <br>";
+        */
 
         // подцепляем файл с классом модели (файла модели может и не быть)
 
         $model_file = strtolower($model_name).'.php';
-        $model_path = "src/Models/".$model_file;
+        $model_path = "../src/models/".$model_file;
         if(file_exists($model_path))
         {
-            include "src/Models/".$model_file;
+            include "../src/models/".$model_file;
         }
 
         // подцепляем файл с классом контроллера
         $controller_file = strtolower($controller_name).'.php';
-        $controller_path = "src/Controllers/".$controller_file;
+        $controller_path = "../andframe/src/controllers/".$controller_file;
         if(file_exists($controller_path))
         {
-            include "src/Controllers/".$controller_file;
+            include "../src/controllers/".$controller_file;
         }
         else
         {
-
-            //правильно было бы кинуть здесь исключение,
-            //но для упрощения сразу сделаем редирект на страницу 404
-
+            /*
+            правильно было бы кинуть здесь исключение,
+            но для упрощения сразу сделаем редирект на страницу 404
+            */
             Route::ErrorPage404();
         }
 
@@ -92,6 +89,6 @@ class Route
         header('HTTP/1.1 404 Not Found');
         header("Status: 404 Not Found");
         header('Location:'.$host.'404');
-    } */
+    }
 
 }

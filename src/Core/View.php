@@ -1,37 +1,37 @@
 <?php
 
-namespace Andframe\Framework\Core;
+//namespace Andframe\Framework\Core;
 
 class View
 {
 
-    public function __construct()
-    {
-    echo 'я во вьюхе';
-    }
+    //public function __construct()
+    //{
+    //echo 'я во вьюхе';
+    //}
     //public $template_view; // здесь можно указать общий вид по умолчанию.
 
+    /*
+    $content_file - виды отображающие контент страниц;
+    $template_file - общий для всех страниц шаблон;
+    $data - массив, содержащий элементы контента страницы. Обычно заполняется в модели.
+    */
+    function generate($content_view, $template_view, $data = null)
+    {
 
-	//$content_file - виды отображающие контент страниц;
-	//$template_file - общий для всех страниц шаблон;
-	//$data - массив, содержащий элементы контента страницы. Обычно заполняется в модели.
+        /*
+        if(is_array($data)) {
 
-	/*function generate($content_view, $template_view, $data = null)
-	{
+            // преобразуем элементы массива в переменные
+            extract($data);
+        }
+        */
 
-
-		//if(is_array($data)) {
-
-			// преобразуем элементы массива в переменные
-		//	extract($data);
-		}
-
-
-
-		//динамически подключаем общий шаблон (вид),
-		//внутри которого будет встраиваться вид
-		//для отображения контента конкретной страницы.
-
-		include 'src/Views/'.$template_view;
-	} */
+        /*
+        динамически подключаем общий шаблон (вид),
+        внутри которого будет встраиваться вид
+        для отображения контента конкретной страницы.
+        */
+        include 'src/views/'.$template_view;
+    }
 }
